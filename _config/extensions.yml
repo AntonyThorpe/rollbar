@@ -1,0 +1,6 @@
+---
+Name: rollbar-extensions
+---
+PageController:
+  extensions:
+    - AntonyThorpe\Rollbar\RollbarPageExtension

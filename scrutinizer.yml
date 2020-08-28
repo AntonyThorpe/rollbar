@@ -1,0 +1,20 @@
+inherit: true
+
+build:
+  dependencies:
+    before:
+     - composer require --prefer-source --no-update silverstripe/recipe-cms:^4
+     - composer require silverstripe/vendor-plugin:^1.0 --no-update --prefer-dist --prefer-stable
+     - composer install --prefer-dist --no-interaction --no-progress --no-suggest --optimize-autoloader --verbose --profile
+  nodes:
+    analysis:
+      tests:
+        override: [php-scrutinizer-run]
+
+checks:
+  php:
+    code_rating: true
+    duplication: true
+
+filter:
+  paths: [src/*]
