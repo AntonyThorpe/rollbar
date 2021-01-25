@@ -9,8 +9,10 @@
 ```yml
 ---
 Name: rollbar
-After:
-  - 'rollbar-extensions'
+After: rollbar-extensions
+---
+AntonyThorpe\Rollbar\Rollbar:
+  client_token: test
 ---
 Only:
   environment: live
