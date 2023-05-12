@@ -13,6 +13,8 @@ After: rollbar-extensions
 ---
 AntonyThorpe\Rollbar\Rollbar:
   client_token: test
+  show_on_dev: true  # default is false
+  show_on_test: true # default is false
 ---
 Only:
   environment: live
@@ -23,3 +25,9 @@ AntonyThorpe\Rollbar\Rollbar:
 ```
 * Add `<% include Rollbar %>` to Page.ss within the head element before any other javascript loads.
 * dev/build
+
+You can turn Rollbar off completely:
+```yml
+AntonyThorpe\Rollbar\Rollbar:
+  show: false
+```
