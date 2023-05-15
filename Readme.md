@@ -10,7 +10,7 @@ Rollbar automates error monitoring and triaging, so developers can fix errors th
 Loads your access token with the javascript script with every page load.
 
 ## Requirements
-* SilverStripe v4
+* SilverStripe v4/v5
 
 ## Links
 * rollbar.com
