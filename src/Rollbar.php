@@ -13,31 +13,31 @@ class Rollbar
 
     /**
      * Access Token created at rollbar.com
-     * @var string
+     * @config
      */
-    private static $client_token = '';
+    private static string $client_token = '';
 
     /**
      * Operate/pause communications with Rollbar
-     * @var boolean
+     * @config
      */
-    private static $show = true;
+    private static bool $show = true;
 
     /**
      * When in the dev environment, show Rollbar in the template
-     * @var boolean
+     * @config
      */
-    private static $show_on_dev = false;
+    private static bool $show_on_dev = false;
 
     /**
      * When in the test environment, show Rollbar in the template
-     * @var boolean
+     * @config
      */
-    private static $show_on_test = false;
+    private static bool $show_on_test = false;
 
     /**
      * When in the live environment, show Rollbar in the template
-     * @var boolean
+     * @config
      */
-    private static $show_on_live = true;
+    private static bool $show_on_live = true;
 }

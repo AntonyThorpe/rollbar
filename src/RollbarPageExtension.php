@@ -14,9 +14,8 @@ class RollbarPageExtension extends Extension
 {
     /**
      * Show/no-show of the Rollbar javascript file as set in your config
-     * @return boolean
      */
-    public function getShowRollbar()
+    public function getShowRollbar(): bool
     {
         if (Director::isLive() && Rollbar::config()->show_on_live && Rollbar::config()->show) {
             return true;
@@ -25,18 +24,13 @@ class RollbarPageExtension extends Extension
         if (Director::isDev() && Rollbar::config()->show_on_dev && Rollbar::config()->show) {
             return true;
         }
-
-        if (Director::isTest() && Rollbar::config()->show_on_test && Rollbar::config()->show) {
-            return true;
-        }
-
-        return false;
+        return Director::isTest() && Rollbar::config()->show_on_test && Rollbar::config()->show;
     }
 
     /**
      * Provide the site id to the template
      */
-    public function getRollbarClientToken()
+    public function getRollbarClientToken(): string
     {
         return Rollbar::config()->client_token;
     }
